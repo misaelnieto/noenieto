@@ -1,0 +1,10 @@
+  tzicatl.themes.uncomplicated is copyright (c) 2010 by Noe Nieto <tzicatl@gmail.com>
+
+  I want this code to be GPL v2, but I'm going to use the Uncomplicated theme,
+  which has Creative Commons Attribution 2.5 and i don't know If it can be mixed
+  with my code. So let the licence of this software to be in such a wayt that is
+  both compatible with GPL V2 and Creative Commons Attribution 2.5. If that is not
+  possible, then don't use this software. Or feel free to contact me and suggest a
+  solution.
+
+
