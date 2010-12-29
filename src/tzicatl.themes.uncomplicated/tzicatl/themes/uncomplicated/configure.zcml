@@ -5,4 +5,11 @@
 
   <five:registerPackage package="." initialize=".initialize" />
 
+  <genericsetup:registerProfile
+      name="default"
+      title="tzicatl.themes.uncomplicated"
+      directory="profiles/default"
+      description='Extension profile for my "Uncomplicated" Plone theme based on Diazo.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
 </configure>
