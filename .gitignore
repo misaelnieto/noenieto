@@ -9,4 +9,4 @@ var
 downloads
 *.egg-info
 eggs
-
+*.wpr
