@@ -13,5 +13,16 @@
         </value>
     </record>
 
+    <record interface="collective.xdv.interfaces.ITransformSettings" field="rules">
+        <value>python://tzicatl.themes.uncomplicated/static/uncomplicated/rules.xml</value>
+    </record>
+
+    <record interface="collective.xdv.interfaces.ITransformSettings" field="theme">
+        <value>python://tzicatl.themes.uncomplicated/static/uncomplicated/index.html</value>
+    </record>
+
+    <record interface="collective.xdv.interfaces.ITransformSettings" field="absolute_prefix">
+        <value>/++resource++tzicatl.themes.uncomplicated/uncomplicated</value>
+    </record>
 
 </registry>
