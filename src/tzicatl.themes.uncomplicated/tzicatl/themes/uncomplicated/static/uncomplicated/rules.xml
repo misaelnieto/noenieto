@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/xdv"
+    xmlns:css="http://namespaces.plone.org/xdv+css"
+    xmlns:xi="http://www.w3.org/2001/XInclude"
+    >
+
+    <!-- Stuff that happens on all pages -->
+    <xi:include href="rules-standard.xml" />
+
+</rules>

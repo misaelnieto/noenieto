@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/xdv"
+    xmlns:css="http://namespaces.plone.org/xdv+css"
+    >
+
+    <!-- Replace Head: title -->
+    <replace theme="/html/head/title" content="/html/head/title" />
+
+    <!-- Base tag -->
+    <replace theme="/html/head/base" content="/html/head/base" />
+
+    <!-- Drop theme's meta tags and pull in plone's -->
+    <drop theme="/html/head/meta" />
+    <append theme="/html/head" content="/html/head/meta" />
+
+    <!-- Also pull in Plone link tags but not CSS (yet)-->
+    <append theme="/html/head" content="/html/head/link[@title]"/>
+    <append theme="/html/head" content="/html/head/link[@rel='shortcut icon']"/>
+    <append theme="/html/head" content="/html/head/link[@rel='apple-touch-icon']"/>
+
+    <!-- Change header logo url -->
+    <prepend theme="//*[@id='logo']/h1/a" content="//*[@id='portal-logo']/@href" />
+    <prepend theme="//*[@id='logo']/p/a" content="//*[@id='portal-logo']/@href" />
+
+    <!--Now copy the menu-->
+    <replace theme="//*[@id='menu']/ul" content="//*[@id='portal-globalnav']" />
+</rules>
