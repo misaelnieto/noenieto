@@ -19,6 +19,9 @@
     <append theme="/html/head" content="/html/head/link[@rel='shortcut icon']"/>
     <append theme="/html/head" content="/html/head/link[@rel='apple-touch-icon']"/>
 
+	<!--copy body's dir attribute-->
+	<prepend theme="/html/body" content="/html/body/@dir" />
+
     <!-- Change header logo url -->
     <prepend theme="//*[@id='logo']/h1/a" content="//*[@id='portal-logo']/@href" />
     <prepend theme="//*[@id='logo']/p/a" content="//*[@id='portal-logo']/@href" />
