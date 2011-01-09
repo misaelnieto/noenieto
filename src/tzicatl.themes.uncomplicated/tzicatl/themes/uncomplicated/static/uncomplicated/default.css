@@ -316,7 +316,7 @@ hr {
 	color: #FFFFFF;
 }
 
-#legal {
+#footer p {
 	clear: both;
 	margin: 0;
 	padding: 10px 0;
@@ -327,8 +327,30 @@ hr {
 	border: 2px #CCE5EB solid;
 }
 
-#legal a {
+#footer p a {
 	border-bottom: 1px dotted #DA2128;
 	text-decoration: none;
 	color: #DA2128;
+}
+
+#portal-siteactions {
+	font-size: 85%;
+    padding-bottom: 2em;
+    text-align: center;
+}
+
+#portal-siteactions li {
+	display:inline;
+    margin-right: 0.5em;
+}
+
+#portal-colophon {
+    font-size: 70%;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+#portal-colophon li {
+    padding: 0 0.75em;
+	display: inline;
 }

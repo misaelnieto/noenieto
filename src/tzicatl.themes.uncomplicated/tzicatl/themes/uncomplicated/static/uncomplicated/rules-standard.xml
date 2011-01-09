@@ -25,4 +25,21 @@
 
     <!--Now copy the menu-->
     <replace theme="//*[@id='menu']/ul" content="//*[@id='portal-globalnav']" />
+
+    <!--Continue with the footer and colophon-->
+    <before theme="//*[@id='footer']" content="//*[@id='portal-siteactions']"/>
+    <prepend theme="//*[@id='footer']" content="//*[@id='portal-footer']/*"/>
+    <append theme="/html/body" content="//*[@id='portal-colophon']"/>
+
+	<copy theme="//*[@id='legal']">
+
+		This site uses a template which requires me to show you the following
+		copyright (Only for the template): <br/> ©2007 Uncomplicated ·
+
+		All Rights Reserved · Design by <a
+		href="http://www.freecsstemplates.org/">Free CSS Templates</a> ·
+
+		Icons by <a href="http://famfamfam.com/">FAMFAMFAM</a>
+
+	</copy>
 </rules>
