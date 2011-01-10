@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/xdv"
+    xmlns:css="http://namespaces.plone.org/xdv+css"
+    >
+
+    <drop theme="//*[@id='content']/*" />
+    <append theme="//*[@id='content']" content="//*[@id='portal-column-content']" />
+
+</rules>
