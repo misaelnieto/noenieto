@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/xdv"
+    xmlns:css="http://namespaces.plone.org/xdv+css"
+    >
+    <!--breadcrumbs at the top-->
+    <prepend theme="//*[@id='content']"
+             content="//*[@id='portal-breadcrumbs']" />
+
+    <!--Specially crafted post date goes next-->
+    <replace theme="//div[@class='post'][1]/p[@class='date']"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][1]//p[@class='date']" />
+
+    <!--The title-->
+    <copy theme="//div[@class='post'][1]/h2"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][1]/h2/a" />
+
+    <!--These two copy the whole body contents including the brief description-->
+    <copy theme="//div[@class='post'][1]/div[@class='entry']"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][1]/p[@class='tileBody']" />
+    <append theme="//div[@class='post'][1]/div[@class='entry']"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][1]/div[@class='tileBody blog-entry']" />
+
+    <!--This one prepends the blog image on top of the post-->
+    <prepend theme="//div[@class='post'][1]/div[@class='entry']"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][1]/a" />
+
+    <!--The post footer contents gets replaced with the contents of the document byline-->
+    <copy theme="//div[@class='post'][1]/div[@class='meta']"
+             content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][1]//*[@class='documentByLine']/*" />
+
+    <!--Now, we will repeat the above two times more with different indexes -->
+    <!--Index number 2-->
+
+    <!--Specially crafted post date goes next-->
+    <replace theme="//div[@class='post'][2]/p[@class='date']"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][2]//p[@class='date']" />
+
+    <!--The title-->
+    <copy theme="//div[@class='post'][2]/h2"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][2]/h2/a" />
+
+    <!--These two copy the whole body contents including the brief description-->
+    <copy theme="//div[@class='post'][2]/div[@class='entry']"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][2]/p[@class='tileBody']" />
+    <append theme="//div[@class='post'][2]/div[@class='entry']"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][2]/div[@class='tileBody blog-entry']" />
+
+    <!--This one prepends the blog image on top of the post-->
+    <prepend theme="//div[@class='post'][2]/div[@class='entry']"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][2]/a" />
+
+    <!--The post footer contents gets replaced with the contents of the document byline-->
+    <copy theme="//div[@class='post'][2]/div[@class='meta']"
+             content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][2]//*[@class='documentByLine']/*" />
+
+    <!--Index number 3-->
+
+    <!--Specially crafted post date goes next-->
+    <replace theme="//div[@class='post'][3]/p[@class='date']"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][3]//p[@class='date']" />
+
+    <!--The title-->
+    <copy theme="//div[@class='post'][3]/h2"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][3]/h2/a" />
+
+    <!--These two copy the whole body contents including the brief description-->
+    <copy theme="//div[@class='post'][3]/div[@class='entry']"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][3]/p[@class='tileBody']" />
+    <append theme="//div[@class='post'][3]/div[@class='entry']"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][3]/div[@class='tileBody blog-entry']" />
+
+    <!--This one prepends the blog image on top of the post-->
+    <prepend theme="//div[@class='post'][3]/div[@class='entry']"
+          content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][3]/a" />
+
+    <!--The post footer contents gets replaced with the contents of the document byline-->
+    <copy theme="//div[@class='post'][3]/div[@class='meta']"
+             content="//*[@class='tileItem visualIEFloatFix vevent contenttype-blog-entry'][3]//*[@class='documentByLine']/*" />
+
+
+</rules>

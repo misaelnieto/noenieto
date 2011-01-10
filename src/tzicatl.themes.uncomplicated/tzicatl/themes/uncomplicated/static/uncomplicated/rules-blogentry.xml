@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/xdv"
+    xmlns:css="http://namespaces.plone.org/xdv+css"
+    >
+    <!--breadcrumbs at the top-->
+    <prepend theme="//*[@id='content']"
+             content="//*[@id='portal-breadcrumbs']" />
+
+    <!--Drop 2nd and 3rd blog entry placeholders -->
+    <drop theme="//div[@class='post'][position() > 1]" />
+
+    <!--Specially crafted post date goes next-->
+    <replace theme="//*[@class='post'][1]/p[@class='date']"
+          content="//*[@id='content']//p[@class='date']" />
+
+    <!--The title-->
+    <copy theme="//div[@class='post']/h2"
+          content="//h1[@class='documentFirstHeading']/*" />
+
+    <!--Copy everything after documentByLine-->
+    <copy theme="//div[@class='post'][1]/div[@class='entry']"
+          content="//*[@id='content']/div/*[position() > 3]" />
+
+    <!--The post footer contents gets replaced with the contents of the document byline-->
+    <copy theme="//div[@class='post'][1]/div[@class='meta']"
+             content="//*[@id='content']//*[@class='documentByLine']/*" />
+
+</rules>
