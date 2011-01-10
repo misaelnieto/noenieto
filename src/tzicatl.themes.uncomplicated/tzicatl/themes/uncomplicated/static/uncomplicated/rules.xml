@@ -8,4 +8,21 @@
     <!-- Stuff that happens on all pages -->
     <xi:include href="rules-standard.xml" />
 
+    <!-- Stuff that happens on Plone's Documents -->
+    <rules css:if-content="body.portaltype-document">
+      <xi:include href="rules-document.xml" />
+    </rules>
+    <rules css:if-content="body.portaltype-plone-site">
+      <xi:include href="rules-document.xml" />
+    </rules>
+
+    <!--Special rules for blog view template-->
+    <rules css:if-content="body.template-blog_view">
+      <xi:include href="rules-blogview.xml" />
+    </rules>
+    <!--Special rules for blog entry template-->
+    <rules css:if-content="body.template-blogentry_view">
+      <xi:include href="rules-blogentry.xml" />
+    </rules>
+
 </rules>
