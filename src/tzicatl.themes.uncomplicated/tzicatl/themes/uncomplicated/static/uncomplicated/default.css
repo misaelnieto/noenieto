@@ -197,9 +197,11 @@ hr {
 	line-height:normal;
 	text-transform: uppercase;
 	color: #000000;
+	font-size: xx-small;
 }
 
-.post .meta p {
+.post .meta div, .post .meta span {
+	display: inline;
 }
 
 .post .meta a {
