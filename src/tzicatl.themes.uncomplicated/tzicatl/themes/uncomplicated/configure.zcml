@@ -1,10 +1,15 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="tzicatl.themes.uncomplicated">
+
+  <cmf:registerDirectory name="tzicatl_images"/>
+  <cmf:registerDirectory name="tzicatl_styles"/>
+  <cmf:registerDirectory name="tzicatl_templates"/>
 
   <five:registerPackage package="." initialize=".initialize" />
 

@@ -1,0 +1,141 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<div metal:fill-slot="main">
+    <tal:main-macro metal:define-macro="main"
+          tal:define="kssClassesView context/@@kss_field_decorator_view;
+                      getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
+                      templateId template/getId;
+                      text python:context.CookedBody(stx_level=2);
+                      len_text python:len(text.strip());
+                      ploneview context/@@plone;
+                      toLocalizedTime nocall:ploneview/toLocalizedTime;">
+
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+        <h1 class="documentFirstHeading">
+            <metal:field use-macro="python:context.widget('title', mode='view')">
+            Title
+            </metal:field>
+        </h1>
+        <p class="date"
+           tal:define="item_effective context/EffectiveDate;
+                       DateTime python:modules['DateTime'].DateTime;"
+           condition="python:item_effective and item_effective != 'None'">
+            <span tal:replace="python:DateTime(item_effective).strftime('%B')">
+             August </span>
+            <b tal:content="python:DateTime(item_effective).strftime('%d')">16</b>
+        </p>
+        <div class="documentByLine"
+             tal:define="item_creator context/Creator">
+            <tal:name tal:condition="item_creator"
+                tal:define="author python:context.portal_membership.getMemberInfo(item_creator)">
+              <span i18n:translate="label_by_author">Posted by
+              <a href="#"
+                 title="Read more posts by this author"
+                 tal:attributes="href string:${context/portal_url}/author/${item_creator}"
+                 tal:content="python:author and author['fullname'] or item_creator"
+                 tal:omit-tag="not:author"
+                 i18n:domain="scrawl"
+                 i18n:name="author"
+                 i18n:attributes="title author_title">
+                Bob Dobalina
+              </a>
+              </span>
+            </tal:name>
+            <span>&nbsp;| &nbsp;</span>
+            <tal:hasDate i18n:domain="scrawl"
+                         i18n:translate="label_blog_entry_date"
+                         define="eDate context/EffectiveDate|nothing"
+                         condition="python:eDate != 'None'">
+                at
+                <span i18n:name="date"
+                      tal:replace="python:toLocalizedTime(eDate,long_format=1)">
+                August 16, 2001 at 23:35:59
+                </span>
+            </tal:hasDate>
+            <span>&nbsp;| &nbsp;</span>
+            <a class="permalink" title="Link to this post and its comments.  Use this for bookmarking."
+               i18n:domain="scrawl"
+               i18n:translate="label_perma_link"
+               i18n:attributes="title label_perma_link_title"
+               tal:attributes="href context/absolute_url">Permalink</a>
+            <span>&nbsp;| &nbsp;</span>
+            <div class="keyword-info"
+                 i18n:domain="scrawl"
+                 i18n:translate="label_blog_entry_categories"
+                 tal:condition="context/Subject">
+                Filed under:
+                  <span i18n:name="categories" tal:omit-tag="">
+                    <span tal:repeat="category context/Subject">
+                      <a href=""
+                         class="link-category"
+                         rel="tag"
+                         tal:define="qs python:context.create_query_string(Subject=category)"
+                         tal:content="category"
+                         tal:attributes="href string:${context/portal_url}/search?${qs}">
+                           Category
+                      </a><tal:separator condition="not: repeat/category/end">,</tal:separator>
+                    </span>
+                  </span>
+            </div>
+        </div>
+
+        <p class="documentDescription">
+            <metal:field use-macro="python:context.widget('description', mode='view')">
+            Description
+            </metal:field>
+        </p>
+
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+
+        <div class="newsImageContainer"
+             tal:condition="context/getImage|nothing">
+            <a href="#"
+               tal:define="here_url context/@@plone_context_state/object_url;"
+               tal:attributes="href string:$here_url/image/image_view_fullscreen"
+               id="parent-fieldname-image">
+               <img tal:replace="structure python: context.tag(scale='mini', css_class='newsImage')" src="" alt="" />
+            </a>
+            <p class="discreet">
+              <metal:field use-macro="python:context.widget('imageCaption', mode='view')">
+              Image Caption
+              </metal:field>
+            </p>
+        </div>
+
+        <p tal:define="is_editable context/@@plone_context_state/is_editable;"
+           tal:condition="python: not len_text and is_editable"
+           i18n:translate="no_body_text"
+           class="discreet">
+            This item does not have any body text, click the edit tab to change it.
+        </p>
+
+        <div metal:define-macro="text-field-view"
+             id="parent-fieldname-text" class="stx"
+             tal:define="kss_class python:getKssClasses('text',
+                         templateId=templateId, macro='text-field-view');
+                         text text|context/getText|nothing"
+             tal:condition="text"
+             tal:attributes="class python:test(context.Format() in ('text/structured',
+                                                   'text/x-rst', ), 'stx' + kss_class, 'plain' + kss_class)">
+            <div metal:define-slot="inside" tal:replace="structure text">The body</div>
+        </div>
+
+        <div metal:use-macro="context/document_relateditems/macros/relatedItems">
+            Show related items if they exist
+        </div>
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+
+    </tal:main-macro>
+</div>
+
+</body>
+</html>

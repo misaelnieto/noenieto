@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<object name="portal_skins" default_skin="Uncomplicated">
+
+ <object name="tzicatl_images"
+    meta_type="Filesystem Directory View"
+    directory="tzicatl.themes.uncomplicated:skins/tzicatl_images"/>
+ <object name="tzicatl_templates"
+    meta_type="Filesystem Directory View"
+    directory="tzicatl.themes.uncomplicated:skins/tzicatl_templates"/>
+ <object name="tzicatl_styles"
+    meta_type="Filesystem Directory View"
+    directory="tzicatl.themes.uncomplicated:skins/tzicatl_styles"/>
+
+ <skin-path name="Uncomplicated" based-on="Sunburst Theme">
+  <layer name="tzicatl_images"
+     insert-after="custom"/>
+  <layer name="tzicatl_templates"
+     insert-after="tzicatl_images"/>
+  <layer name="tzicatl_styles"
+     insert-after="tzicatl_templates"/>
+ </skin-path>
+
+</object>
