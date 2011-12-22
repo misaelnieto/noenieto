@@ -1,0 +1,36 @@
+upstream plone {
+    server 127.0.0.1:${puertos:instance};
+}
+
+server {
+    listen       80;
+    server_name  noenieto.com www.noenieto.com;
+    access_log  ${buildout:directory}/var/log/nginx/acess.log;
+    error_log  ${buildout:directory}/var/log/nginx/error.log;
+
+    #GZip 
+    # See http://tumblelog.jauderho.com/post/27655495/gzip-compression-with-nginx
+    gzip             on;
+    gzip_http_version 1.1;
+    gzip_vary on;
+    gzip_comp_level 9; #MAX COMPRESSION!
+    gzip_min_length  512;
+    gzip_proxied     any;
+    gzip_types text/plain text/html text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+    # make sure gzip does not lose large gzipped js or css files
+    # see http://blog.leetsoft.com/2007/7/25/nginx-gzip-ssl
+    gzip_buffers 16 8k;
+  
+    # Disable gzip for certain browsers.
+    gzip_disable “MSIE [1-6].(?!.*SV1)”;
+
+    #Root
+    root ${buildout:directory}/var/www;
+    location / {
+        rewrite ^/(.*)$ /VirtualHostBase/https/noenieto:80/${site-settings:instance-name}/VirtualHostRoot/$1 break;
+        proxy_pass http://plone;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP       $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+}
