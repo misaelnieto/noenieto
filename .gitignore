@@ -9,5 +9,5 @@ var
 downloads
 *.egg-info
 eggs
-*.wpr
+*.wp?
 huevos-revueltos/
