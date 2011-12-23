@@ -1,0 +1,60 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="tzicatl.themes.noenieto">
+
+  <!-- 'Theme for NoeNieto.com (Skin)' Zope 3 browser layer -->
+  <interface
+      interface=".interfaces.IThemeSpecific"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      name="Theme for NoeNieto.com (Skin)"
+      />
+  
+  <!-- Viewlets registration -->
+    <!-- The global sections -->
+    <browser:viewlet
+        name="plone.global_sections"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class="plone.app.layout.viewlets.common.GlobalSectionsViewlet"
+	template = "templates/sections.pt"
+	layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+    <!-- The search box -->
+    <browser:viewlet
+        name="plone.searchbox"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class="plone.app.layout.viewlets.common.SearchBoxViewlet"
+	template = "templates/searchbox.pt"
+	layer=".interfaces.IThemeSpecific"
+        permission="zope2.View"
+        />
+
+    <!-- Footer -->
+    <browser:viewlet
+        name="plone.footer"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        class="plone.app.layout.viewlets.common.FooterViewlet"
+	template="templates/footer.pt"
+	layer=".interfaces.IThemeSpecific"
+        permission="zope.Public"
+        />
+
+  <!-- Zope 3 browser resources -->
+
+  <!-- Resource directory for images -->
+  <browser:resourceDirectory
+      name="tzicatl.themes.noenieto.images"
+      directory="images"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <!-- Resource directory for stylesheets -->
+  <browser:resourceDirectory
+      name="tzicatl.themes.noenieto.stylesheets"
+      directory="stylesheets"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+</configure>

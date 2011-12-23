@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="tzicatl.themes.noenieto">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Theme for NoeNieto.com (Skin)"
+      directory="profiles/default"
+      description='Extension profile for the "Theme for NoeNieto.com (Skin)" Plone theme.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="tzicatl.themes.noenieto.various"
+      title="Theme for NoeNieto.com (Skin): miscellaneous import steps"
+      description="Various import steps that are not handled by GS import/export handlers."
+      handler="tzicatl.themes.noenieto.setuphandlers.setupVarious">
+    <depends name="skins"/>
+  </genericsetup:importStep>
+
+</configure>

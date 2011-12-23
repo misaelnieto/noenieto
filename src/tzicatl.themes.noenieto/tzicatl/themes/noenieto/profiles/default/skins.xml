@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<object name="portal_skins" allow_any="False" cookie_persistence="False"
+   default_skin="Theme for NoeNieto.com (Skin)">
+
+ <object name="nnieto_images"
+    meta_type="Filesystem Directory View"
+    directory="tzicatl.themes.noenieto:skins/nnieto_images"/>
+ <object name="nnieto_templates"
+    meta_type="Filesystem Directory View"
+    directory="tzicatl.themes.noenieto:skins/nnieto_templates"/>
+ <object name="nnieto_styles"
+    meta_type="Filesystem Directory View"
+    directory="tzicatl.themes.noenieto:skins/nnieto_styles"/>
+
+ <skin-path name="Theme for NoeNieto.com (Skin)" based-on="Sunburst Theme">
+  <layer name="nnieto_images"
+     insert-after="custom"/>
+  <layer name="nnieto_templates"
+     insert-after="nnieto_images"/>
+  <layer name="nnieto_styles"
+     insert-after="nnieto_templates"/>
+ </skin-path>
+
+</object>

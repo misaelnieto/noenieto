@@ -1,0 +1,6 @@
+tzicatl.themes.noenieto Copyright 2011, Noe Nieto
+
+The original template license grants me the rights to use the templates, but
+it doesn't allow to publish derivative works as free software. The nerve of
+these guys!
+

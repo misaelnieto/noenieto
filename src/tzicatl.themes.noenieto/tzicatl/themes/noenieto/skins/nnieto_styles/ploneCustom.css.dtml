@@ -1,0 +1,138 @@
+/* uncomment the below selector to get a fixed-width layout. *
+ * 60em is equivalent to 960px in this case, and every       *
+ * grid cell will be 40px with 10px padding.                 */
+
+#visual-portal-wrapper { width: 60em; margin: 0 auto; }
+
+.main-menu-wrapper {
+background:url("menu_decoration.gif") no-repeat scroll center bottom transparent;
+}
+.main-menu-wrapper {
+float:left;
+height:40px;
+margin:-10px 0 0;
+width:100%;
+}
+
+.jqueryslidemenu {
+display:block;
+float:right;
+left:18px;
+position:relative;
+/* z-index:100; */
+}
+
+.jqueryslidemenu {
+font:13px Arial,Helvetica,sans-serif;
+}
+
+.input-arrow {
+background:url("input_arrow.gif") no-repeat scroll 0 0 #A3A3A3;
+}
+
+.input-arrow {
+border:0 none;
+/* float:left; */
+height:18px;
+left:-4px;
+position:relative;
+text-indent:-9000px;
+width:18px;
+top:1px;
+}
+
+#content ul.formTabs li,
+#content ul.configlets li {
+    background:none;
+    padding-left: 0px;
+}
+
+
+dl.portlet dt.portletHeader,
+dl.portlet dt.portletHeader a,
+dl.portlet dt.portletHeader a:hover,
+dl.portlet dt.portletHeader a:link,
+dl.portlet dt.portletHeader a:visited {
+    color: #f87b27;
+    font-size:16px;
+    line-height:26px;
+    font-weight: normal;
+}
+
+#portal-footer ul {
+    float:left;
+    width:520px;
+    font-size:11px;
+}
+
+#portal-footer ul li {
+    float:left;
+    margin:10px 24px 0 0;
+}
+
+#portal-footer ul li a {
+    color:#666666;
+}
+#portal-footer ul li a:hover {
+    color:#f87b27;
+}
+.copyright {
+    float:right;
+    margin-top:10px;
+    text-align:right;
+    width:350px;
+}
+
+#portal-siteactions li a {
+   font-size: 11px;
+   color:#ccc;
+}
+
+#portal-siteactions li a:hover {
+    color:#f87b27;
+}
+
+.dove {
+	float:right;
+}
+/* To change the edit bar color, uncomment the selectors below, and insert *
+ * new color values:                                                        */
+
+/*
+#contentActionMenus,
+dl.actionMenu.activated dd,
+#content-views,
+#edit-bar {
+	background-color: blue;
+	border-color: blue;
+}
+dl.actionMenu a {
+	background-color: blue;
+}
+*/
+
+/* If you want to hide the path bar (aka. breadcrumbs), uncomment the below: */
+
+/*
+#breadcrumbs-you-are-here,
+#breadcrumbs-home,
+#breadcrumbs-current,
+#breadcrumbs-1 {
+    display: none;
+}
+*/
+
+/* If you want variables in the CSS (for example for colors that are used     *
+ * in several locations), Plone has a built-in facility for this. An example  *
+ * is shown below, the variables are defined in the file "base_properties",   *
+ * and below we show the syntax for using them directly in the CSS file.      *
+ * Note that you always need to surround the relevant part (or the entire CSS *
+ * file) with the dtml-with statements for it to work.                        */
+
+/*
+
+/* 
+<dtml-with base_properties>
+    #content a:link { color: &dtml-linkColor;; }
+</dtml-with>
+*/

@@ -1,0 +1,20 @@
+<div metal:define-macro="portal_footer"
+     i18n:domain="tzicatl.themes.noenieto"
+     class="row"
+	 tal:define="navigation_root_url view/navigation_root_url">
+    <div class="cell width-full position-0">
+        <div id="portal-footer">
+	  <ul>
+            <li><a href="http://www.percepcionunitaria.org/" 
+				   target="_blank		"
+			       i18n:translate="">Percepción Unitaria</a></li>
+          </ul>
+	  <div class="copyright">
+			&copy; 2011 
+			<a href="mailto:nnieto@noenieto.com" 
+			   tal:attributes="href string:${navigation_root_url}/contact-info">Noe Nieto</a> 
+			Todos los derechos reservados.
+	  </div>
+        </div>
+    </div>
+</div>
