@@ -6,7 +6,7 @@ This is the buildout for my site at http://noenieto.com
 
 It has:
 
- (-) Plone 4.0.1
+ (-) Plone 4.2.1
  (-) collective.disqus
  (-) Products.Scrawl >= 1.3.2
 
