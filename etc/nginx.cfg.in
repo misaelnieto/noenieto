@@ -27,7 +27,7 @@ server {
     #Root
     root ${buildout:directory}/var/www;
     location / {
-        rewrite ^/(.*)$ /VirtualHostBase/https/noenieto:80/Plone/VirtualHostRoot/$1 break;
+        rewrite ^/(.*)$ /VirtualHostBase/http/noenieto.com:80/noenieto/VirtualHostRoot/$1 break;
         proxy_pass http://plone;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP       $remote_addr;
