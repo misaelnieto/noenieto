@@ -2,6 +2,8 @@
 Buildout for noenieto.com
 ===========================
 
+.. important :: Deprecated repo. I no longer use plone for my web site. It is now static.
+
 This is the buildout for my site at http://noenieto.com
 
 It has:
